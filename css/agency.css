@@ -170,8 +170,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default {
-    border-color: transparent;
-    background-color: #222;
+    border-color: #000;
+    background-color: transparent;
 }
 
 .navbar-default .navbar-brand {
@@ -210,6 +210,7 @@ fieldset[disabled] .btn-xl.active {
     font-weight: 400;
     letter-spacing: 1px;
     color: #fff;
+    display: inline;
 }
 
 .navbar-default .nav li a:hover,
@@ -230,11 +231,20 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
+@media(max-width: 600px) {
+    .navbar-nav {
+    text-align: center;
+    }
+    .nav>li {
+    display: inline;
+    font-size: 0.6em;
+    }
+}
 @media(min-width:768px) {
     .navbar-default {
         padding: 25px 0;
         border: 0;
-        background-color: transparent;
+        background-color: #000;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -264,6 +274,8 @@ fieldset[disabled] .btn-xl.active {
 header {
     text-align: center;
     color: #fff;
+    position: relative;
+    /*
     background-attachment: scroll;
     background-image: url(../img/beach_pic.jpg);
     background-position: center center;
@@ -271,12 +283,30 @@ header {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
+    -o-background-size: cover;*/
+}
+.slider { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.slider .slick-list {
+    height: 100%;
+}
+.slider img { 
+    height: 100%;
 }
 
 header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
+    position: relative;
+    z-index: 11;
+}
+#main-header .intro-heading, #main-header .intro-lead-in {
+    font-family: 'Architects Daughter', cursive;
 }
 
 header .intro-text .intro-lead-in {
@@ -294,6 +324,15 @@ header .intro-text .intro-heading {
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5);
 }
 
 @media(min-width:768px) {
@@ -321,7 +360,7 @@ header .intro-text .intro-heading {
 }
 
 section {
-    padding: 100px 0;
+    padding: 81px 0;
 }
 
 section h2.section-heading {
@@ -331,7 +370,6 @@ section h2.section-heading {
 }
 
 section h3.section-subheading {
-    margin-bottom: 75px;
     text-transform: none;
     font-size: 3em;
     color: black;
@@ -340,15 +378,46 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 81px 0;
     }
 }
-
+#services {
+    height: 501px;
+}
 .service-heading {
     margin: 15px 0;
     text-transform: none;
 }
-
+.service-heading img {
+    height: 132px;
+    width: 118px;
+}
+/*#services .col-sm-4:nth-of-type(2) .service-heading img {
+    width: 114px;
+}
+.server-side {
+    margin: 27px 0 0 0;
+}
+*/
+.language-list { 
+    display: none;
+    -webkit-transition: height 8ms ease-in-out;
+    -moz-transition: height 8ms ease-in-out;
+    -ms-transition: height 8ms ease-in-out;
+    -o-transition: height 8ms ease-in-out;
+    transition: height 8ms ease-in-out; 
+}
+.skills:hover .language-list, .skills:focus .language-list {
+    display: block;
+}
+#services i {
+    color: #cd291d;
+}
+#portfolio .project {
+    position: relative;
+    -webkit-box-shadow: 1px 1px 30px 2px #525252;
+    box-shadow: 1px 1px 30px 2px #525252;
+}
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -358,25 +427,28 @@ section h3.section-subheading {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 400px;
+    height: 226px;
+    overflow: hidden;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+#portfolio .portfolio-hover {
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
+    top: 0;
+    left: 0;
     background: rgba(254,209,54,.9);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+#portfolio .project:hover .portfolio-hover, #portfolio .project:focus .portfolio-hover{
     opacity: 1;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+#portfolio .portfolio-hover .portfolio-hover-content {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -386,20 +458,23 @@ section h3.section-subheading {
     font-size: 20px;
     color: #fff;
 }
+#portfolio .portfolio-hover-content p {
+    width: 91%;
+    margin: 0 auto;
+}
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+#portfolio .portfolio-hover .portfolio-hover-content i {
     margin-top: -12px;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+#portfolio .portfolio-hover .portfolio-hover-content h3,
+#portfolio .portfolio-hover .portfolio-hover-content h4 {
     margin: 0;
 }
 
 #portfolio .portfolio-item .portfolio-caption {
     margin: 0 auto;
     padding: 25px;
-    max-width: 400px;
     text-align: center;
     background-color: #fff;
 }
@@ -537,6 +612,9 @@ section h3.section-subheading {
 .timeline .timeline-body>p,
 .timeline .timeline-body>ul {
     margin-bottom: 0;
+}
+.timeline-image img {
+    height: 100%;
 }
 
 @media(min-width:768px) {
@@ -859,4 +937,183 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #fed136;
+}
+@media only screen and (max-width: 990px) {
+    header .intro-text {
+        padding-top: 203px;
+        padding-bottom: 112px;
+    }
+    header .intro-text .intro-heading {
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 66px;
+        font-weight: 700;
+        line-height: 75px;
+    }
+    #services {
+        height: 466px;
+    }
+    .service-heading img {
+        height: 109px;
+        width: 109px;
+    }
+    .skills h4 {
+        font-size: 17px;
+    }
+    .skills h5 {
+        font-size: 13px;
+    }
+    #portfolio {
+        padding: 64px 0;
+    }
+    #portfolio .portfolio-item .portfolio-link {
+        height: 193px;
+    }
+    section h2.section-heading {
+        padding-bottom: 6px;
+    }
+    #about h3.section-subheading {
+        margin-bottom: 36px;
+        font-size: 33px;
+    }
+    .timeline>li {
+        margin-bottom: 59px;
+    }
+    #contact {
+        padding: 53px 0;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .navbar-fixed-bottom, .navbar-fixed-top {
+        margin: 0;
+        position: relative; 
+    }
+    .nav { 
+        text-align: center;
+    }
+    .navbar-nav {
+        margin: 0 -15px;
+    }
+    .nav>li {
+        display: inline-block;
+    }
+    .navbar-default {
+        background-color: #000;
+    }
+    .navbar-default .nav li a {
+        padding-top: 15px;
+        display: inline-block;
+        font-size: 10px;
+    }
+    header .intro-text {
+        padding-top: 130px;
+        padding-bottom: 76px;
+    }
+    #services {
+        padding: 31px 0 81px;
+        height: 637px;
+    }   
+    #portfolio .portfolio-item {
+        margin: 0 auto 30px;
+        float: none;
+    }
+    section h2.section-heading {
+        padding-bottom: 19px;
+    }
+    #services .col-xs-6:nth-of-type(3) {
+        margin: 0 auto;
+        float: none;
+    }
+    .language-list {
+        display: block;
+    }
+    .skills h4 {
+        font-size: 15px;
+    }
+    .skills h5 {
+        font-size: 12px;
+    }
+    #portfolio {
+        padding: 43px 0;
+    }
+    #portfolio .portfolio-item .portfolio-link {
+        height: 260px;
+    }
+    #about {
+        padding: 40px 3px;
+    }
+    #contact {
+        padding: 42px 0 35px;
+    }
+}
+@media only screen and (max-width: 479px) {
+    header .intro-text {
+        padding-top: 51px;
+        padding-bottom: 42px;
+    }
+    header .intro-text .intro-heading {
+        margin-bottom: 6px;
+        font-size: 38px;
+    }
+    section h2.section-heading {
+        padding-bottom: 11px;
+        font-size: 35px;
+    }
+    #services {
+        height: 568px;
+    }
+    .service-heading img {
+        height: 77px;
+        width: 77px;
+    }
+    #portfolio .portfolio-item .portfolio-link {
+        height: 176px;
+    }
+    #about h3.section-subheading {
+        font-size: 29px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    #portfolio .portfolio-item .portfolio-link {
+        height: 158px;
+    }
+    #portfolio .portfolio-item .portfolio-caption {
+        padding: 18px;
+    }
+    #about h3.section-subheading {
+        font-size: 24px;
+    }
+    .timeline .timeline-heading h4.subheading {
+        font-size: 15px;
+    }
+    #contact {
+        padding: 41px 0 24px;
+    }
+    #contact section h2.section-heading {
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    #portfolio {
+        padding: 29px 0;
+    }
+    #contact h2.section-heading {
+        font-size: 29px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .navbar-default .nav li a {
+        padding: 15px 5px;
+    }
+    header .intro-text {
+        padding-top: 42px; 
+    }
+    header .intro-text .intro-heading {
+        margin: 0;
+        font-size: 33px;
+    }
+    .skills h4 {
+        font-size: 14px;
+    }
 }
