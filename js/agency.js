@@ -24,3 +24,15 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+$(document).ready(function(){
+  $('.slider').slick({
+    autoplay: true,
+    arrows: false,
+    fade: true,
+    infinite: true,
+    autoplaySpeed: 2000
+  });
+
+});
+
