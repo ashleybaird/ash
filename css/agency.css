@@ -382,7 +382,7 @@ section h3.section-subheading {
     }
 }
 #services {
-    height: 501px;
+    height: 557px;
 }
 .service-heading {
     margin: 15px 0;
@@ -418,9 +418,11 @@ section h3.section-subheading {
     -webkit-box-shadow: 1px 1px 30px 2px #525252;
     box-shadow: 1px 1px 30px 2px #525252;
 }
+
 #portfolio .portfolio-item:nth-of-type(2) .project img {
     height: 100%;
 }
+
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -959,7 +961,7 @@ body {
         line-height: 75px;
     }
     #services {
-        height: 466px;
+        height: 486px;
     }
     .service-heading img {
         height: 109px;
@@ -1019,7 +1021,7 @@ body {
     }
     #services {
         padding: 31px 0 81px;
-        height: 637px;
+        height: 702px;
     }   
     #portfolio .portfolio-item {
         margin: 0 auto 30px;
@@ -1045,7 +1047,7 @@ body {
         padding: 43px 0;
     }
     #portfolio .portfolio-item .portfolio-link {
-        height: 260px;
+        height: 251px;
     }
     #about {
         padding: 40px 3px;
@@ -1065,17 +1067,23 @@ body {
     }
     section h2.section-heading {
         padding-bottom: 11px;
-        font-size: 35px;
+        font-size: 30px;
     }
     #services {
-        height: 568px;
+        height: 635px;
     }
     .service-heading img {
         height: 77px;
         width: 77px;
     }
+    #portfolio .portfolio-item .portfolio-caption {
+        padding: 21px;
+    }
     #portfolio .portfolio-item .portfolio-link {
-        height: 176px;
+        height: 139px;
+    }
+    #portfolio .portfolio-hover .portfolio-hover-content {
+        top: 31%;
     }
     #about h3.section-subheading {
         font-size: 29px;
@@ -1083,10 +1091,17 @@ body {
 }
 @media only screen and (max-width: 375px) {
     #portfolio .portfolio-item .portfolio-link {
-        height: 158px;
+        height: 123px;
     }
     #portfolio .portfolio-item .portfolio-caption {
-        padding: 18px;
+        padding: 13px;
+    }
+    #portfolio .portfolio-item .portfolio-caption h4 {
+        font-size: 15px;
+    }
+    #portfolio .portfolio-hover .portfolio-hover-content p {
+        font-size: 13px;
+        line-height: 1.5;
     }
     #about h3.section-subheading {
         font-size: 24px;
@@ -1095,7 +1110,7 @@ body {
         font-size: 15px;
     }
     #contact {
-        padding: 41px 0 24px;
+        padding: 31px 0 20px;
     }
     #contact section h2.section-heading {
         font-size: 30px;
@@ -1107,6 +1122,9 @@ body {
     }
     #contact h2.section-heading {
         font-size: 29px;
+    }
+    #portfolio .portfolio-item .portfolio-link {
+        height: 116px;
     }
 }
 @media only screen and (max-width: 320px) {
@@ -1123,4 +1141,22 @@ body {
     .skills h4 {
         font-size: 14px;
     }
+
+    #portfolio .portfolio-item .portfolio-link {
+        height: 102px;
+    }
+    #portfolio .portfolio-hover .portfolio-hover-content p {
+        font-size: 12px;
+    }
 }
+@media only screen and (max-height: 375px) {
+    #portfolio .portfolio-item .portfolio-link {
+        height: 226px;
+    }
+}
+@media only screen and (max-height: 360px) {
+    #portfolio .portfolio-item .portfolio-link {
+        height: 217px;
+    }
+}
+
