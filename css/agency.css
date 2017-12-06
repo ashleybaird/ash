@@ -421,6 +421,7 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item:nth-of-type(2) .project img {
     height: 100%;
+    width: 100%;
 }
 
 #portfolio .portfolio-item {
